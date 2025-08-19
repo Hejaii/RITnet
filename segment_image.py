@@ -46,6 +46,10 @@ def main() -> None:
     args = parser.parse_args()
 
     device = torch.device("cuda" if args.useGPU and torch.cuda.is_available() else "cpu")
+    if args.useGPU and not torch.cuda.is_available():
+        print("CUDA not available, falling back to CPU")
+    print(f"Using device: {device}")
+
 
     net = model_dict[args.model].to(device)
     state = torch.load(args.weights, map_location=device)

@@ -33,7 +33,8 @@ To segment a single image on macOS (CPU by default):
 pip install -r requirements.txt
 python segment_image.py --image path/to/eye.png --output mask.png --weights best_model.pkl
 ```
-Add `--useGPU` to enable CUDA if available.
+Add `--useGPU` to enable CUDA if available; if CUDA isn't found the script will fall back to CPU.
+
 
 
 # Contents in the zip folder
