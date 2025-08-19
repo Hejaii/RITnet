@@ -50,6 +50,7 @@ def main() -> None:
         print("CUDA not available, falling back to CPU")
     print(f"Using device: {device}")
 
+
     net = model_dict[args.model].to(device)
     state = torch.load(args.weights, map_location=device)
     net.load_state_dict(state)

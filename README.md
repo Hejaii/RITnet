@@ -36,6 +36,7 @@ python segment_image.py --image path/to/eye.png --output mask.png --weights best
 Add `--useGPU` to enable CUDA if available; if CUDA isn't found the script will fall back to CPU.
 
 
+
 # Contents in the zip folder
 ```
 best_model.pkl     :: Our final model (potential winner model) which contains all the weights in Float32 format (Number of Parameters 248900).
