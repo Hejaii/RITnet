@@ -24,8 +24,16 @@ To train the model with densenet model:
 ```python train.py --model densenet --expname FINAL --bs 8 --useGPU True --dataset Semantic_Segmentation_Dataset/```
 
 To test the result:
- 
+
 ```python test.py --model densenet --load best_model.pkl --bs 4 --dataset Semantic_Segmentation_Dataset/```
+
+To segment a single image on macOS (CPU by default):
+
+```bash
+pip install -r requirements.txt
+python segment_image.py --image path/to/eye.png --output mask.png --weights best_model.pkl
+```
+Add `--useGPU` to enable CUDA if available; if CUDA isn't found the script will fall back to CPU.
 
 
 # Contents in the zip folder
